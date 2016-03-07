@@ -6,10 +6,8 @@ import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.Paint;
 import android.graphics.PixelFormat;
-import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.ColorInt;
-import android.util.LruCache;
 
 /**
  * Created by hoangminh on 3/8/16.
@@ -17,7 +15,6 @@ import android.util.LruCache;
 public class AwesomeDrawable extends Drawable {
 
     private static final float PADDING_RATIO = 0.88f;
-    private static LruCache<String, Typeface> sTypefaceCache = new LruCache<>(12);
 
     private final Context context;
     private final int icon;
@@ -56,19 +53,10 @@ public class AwesomeDrawable extends Drawable {
         this.paint.setColor(this.color);
         this.paint.setTextSize(this.size);
 
-        this.paint.setTypeface(getTypeFace());
+        this.paint.setTypeface(FontManager.getCachedTypeface(context, FontManager.FONT_AWESOME));
         this.paint.setAntiAlias(this.antiAliased);
         this.paint.setFakeBoldText(this.fakeBold);
         this.paint.setShadowLayer(this.shadowRadius, this.shadowDx, this.shadowDy, this.shadowColor);
-    }
-
-    public Typeface getTypeFace() {
-        Typeface typeface = sTypefaceCache.get(FontManager.FONT_AWESOME);
-        if (typeface == null) {
-            typeface = FontManager.getTypeface(context, FontManager.FONT_AWESOME);
-            sTypefaceCache.put(FontManager.FONT_AWESOME, typeface);
-        }
-        return typeface;
     }
 
     @Override

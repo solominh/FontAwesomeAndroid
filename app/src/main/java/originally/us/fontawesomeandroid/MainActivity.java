@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Typeface awesomeFont = FontManager.getTypeface(getApplicationContext(), FontManager.FONT_AWESOME);
+        Typeface awesomeFont = FontManager.getCachedTypeface(getApplicationContext(), FontManager.FONT_AWESOME);
         FontManager.markAsIconContainer(findViewById(R.id.icons_container), awesomeFont);
 
         // Awesome drawable

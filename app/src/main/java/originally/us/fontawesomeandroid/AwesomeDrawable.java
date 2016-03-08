@@ -16,64 +16,64 @@ public class AwesomeDrawable extends Drawable {
 
     private static final float PADDING_RATIO = 0.88f;
 
-    private final Context context;
-    private final int icon;
-    private final Paint paint;
-    private final int width;
-    private final int height;
-    private final float size;
-    private final int color;
-    private final boolean antiAliased;
-    private final boolean fakeBold;
-    private final float shadowRadius;
-    private final float shadowDx;
-    private final float shadowDy;
-    private final int shadowColor;
+    private final Context mContext;
+    private final int mIcon;
+    private final Paint mPaint;
+    private final int mWidth;
+    private final int mHeight;
+    private final float mSize;
+    private final int mColor;
+    private final boolean mAntiAliased;
+    private final boolean mFakeBold;
+    private final float mShadowRadius;
+    private final float mShadowDx;
+    private final float mShadowDy;
+    private final int mShadowColor;
 
     public AwesomeDrawable(int icon, int sizeDpi, int color,
                            boolean antiAliased, boolean fakeBold, float shadowRadius,
                            float shadowDx, float shadowDy, int shadowColor, Context context) {
         super();
-        this.context = context;
-        this.icon = icon;
-        this.size = dp2px(sizeDpi) * PADDING_RATIO;
-        this.height = dp2px(sizeDpi);
-        this.width = dp2px(sizeDpi);
-        this.color = color;
-        this.antiAliased = antiAliased;
-        this.fakeBold = fakeBold;
-        this.shadowRadius = shadowRadius;
-        this.shadowDx = shadowDx;
-        this.shadowDy = shadowDy;
-        this.shadowColor = shadowColor;
-        this.paint = new Paint();
+        this.mContext = context;
+        this.mIcon = icon;
+        this.mSize = dp2px(sizeDpi) * PADDING_RATIO;
+        this.mHeight = dp2px(sizeDpi);
+        this.mWidth = dp2px(sizeDpi);
+        this.mColor = color;
+        this.mAntiAliased = antiAliased;
+        this.mFakeBold = fakeBold;
+        this.mShadowRadius = shadowRadius;
+        this.mShadowDx = shadowDx;
+        this.mShadowDy = shadowDy;
+        this.mShadowColor = shadowColor;
 
-        paint.setStyle(Paint.Style.FILL);
-        paint.setTextAlign(Paint.Align.CENTER);
-        this.paint.setColor(this.color);
-        this.paint.setTextSize(this.size);
-
-        this.paint.setTypeface(AwesomeFontManager.getTypeFace(context, AwesomeFontManager.FONT_AWESOME));
-        this.paint.setAntiAlias(this.antiAliased);
-        this.paint.setFakeBoldText(this.fakeBold);
-        this.paint.setShadowLayer(this.shadowRadius, this.shadowDx, this.shadowDy, this.shadowColor);
+        // Paint
+        this.mPaint = new Paint();
+        this.mPaint.setStyle(Paint.Style.FILL);
+        this.mPaint.setTextAlign(Paint.Align.CENTER);
+        this.mPaint.setColor(this.mColor);
+        this.mPaint.setTextSize(this.mSize);
+        this.mPaint.setTypeface(AwesomeFontManager.getTypeFace(context, AwesomeFontManager.FONT_AWESOME));
+        this.mPaint.setAntiAlias(this.mAntiAliased);
+        this.mPaint.setFakeBoldText(this.mFakeBold);
+        this.mPaint.setShadowLayer(this.mShadowRadius, this.mShadowDx, this.mShadowDy, this.mShadowColor);
     }
 
     @Override
     public int getIntrinsicHeight() {
-        return height;
+        return mHeight;
     }
 
     @Override
     public int getIntrinsicWidth() {
-        return width;
+        return mWidth;
     }
 
     @Override
     public void draw(Canvas canvas) {
-        float xDiff = (width / 2.0f);
-        String stringIcon = this.context.getResources().getString(icon);
-        canvas.drawText(stringIcon, xDiff, size, paint);
+        float xDiff = (mWidth / 2.0f);
+        String stringIcon = this.mContext.getResources().getString(mIcon);
+        canvas.drawText(stringIcon, xDiff, mSize, mPaint);
     }
 
     @Override
@@ -83,16 +83,16 @@ public class AwesomeDrawable extends Drawable {
 
     @Override
     public void setAlpha(int alpha) {
-        paint.setAlpha(alpha);
+        mPaint.setAlpha(alpha);
     }
 
     @Override
     public void setColorFilter(ColorFilter cf) {
-        paint.setColorFilter(cf);
+        mPaint.setColorFilter(cf);
     }
 
     public int dp2px(float dp) {
-        return (int) (dp * context.getResources().getDisplayMetrics().density + 0.5f);
+        return (int) (dp * mContext.getResources().getDisplayMetrics().density + 0.5f);
     }
 
     public static class Builder {

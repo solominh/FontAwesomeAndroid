@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="fa_image">
+        <attr name="fa_icon" format="reference"/>
+        <attr name="fa_color" format="color"/>
+    </declare-styleable>
+</resources>

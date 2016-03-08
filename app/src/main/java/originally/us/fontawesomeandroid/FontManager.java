@@ -18,7 +18,7 @@ public class FontManager {
 
     private static final Hashtable<String, Typeface> sTypefaceCache = new Hashtable<>();
 
-    public static Typeface getCachedTypeface(Context context, String font) {
+    public static Typeface getTypeFace(Context context, String font) {
         synchronized (sTypefaceCache) {
             Typeface typeface = sTypefaceCache.get(font);
             if (typeface == null) {

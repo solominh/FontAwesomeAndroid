@@ -53,7 +53,7 @@ public class AwesomeDrawable extends Drawable {
         this.paint.setColor(this.color);
         this.paint.setTextSize(this.size);
 
-        this.paint.setTypeface(FontManager.getCachedTypeface(context, FontManager.FONT_AWESOME));
+        this.paint.setTypeface(FontManager.getTypeFace(context, FontManager.FONT_AWESOME));
         this.paint.setAntiAlias(this.antiAliased);
         this.paint.setFakeBoldText(this.fakeBold);
         this.paint.setShadowLayer(this.shadowRadius, this.shadowDx, this.shadowDy, this.shadowColor);

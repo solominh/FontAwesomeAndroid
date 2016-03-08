@@ -5,6 +5,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,5 +25,8 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView imgTest = (ImageView) findViewById(R.id.img_test);
         imgTest.setImageDrawable(builder.build());
+
+        TextView txtTest = (TextView) findViewById(R.id.txt_test);
+        txtTest.setText(getString(R.string.fa_line_chart) +" Chart");
     }
 }

@@ -33,6 +33,6 @@ public class AwesomeText extends TextView{
     }
 
     public void init() {
-        setTypeface(FontManager.getTypeFace(getContext(), FontManager.FONT_AWESOME));
+        setTypeface(AwesomeFontManager.getTypeFace(getContext(), AwesomeFontManager.FONT_AWESOME));
     }
 }

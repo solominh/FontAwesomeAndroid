@@ -13,8 +13,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Typeface awesomeFont = FontManager.getTypeFace(getApplicationContext(), FontManager.FONT_AWESOME);
-        FontManager.markAsIconContainer(findViewById(R.id.icons_container), awesomeFont);
+        Typeface awesomeFont = AwesomeFontManager.getTypeFace(getApplicationContext(), AwesomeFontManager.FONT_AWESOME);
+        AwesomeFontManager.markAsIconContainer(findViewById(R.id.icons_container), awesomeFont);
 
         // Awesome drawable
         AwesomeDrawable.Builder builder = new AwesomeDrawable.Builder(this, R.string.fa_facebook);

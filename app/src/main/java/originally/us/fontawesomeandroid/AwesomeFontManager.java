@@ -11,7 +11,7 @@ import java.util.Hashtable;
 /**
  * Created by hoangminh on 3/8/16.
  */
-public class FontManager {
+public class AwesomeFontManager {
 
     public static final String ROOT = "fonts/";
     public static final String FONT_AWESOME = ROOT + "fontawesome-webfont.ttf";

@@ -12,27 +12,22 @@ import android.widget.TextView;
 public class AwesomeText extends TextView{
 
     public AwesomeText(Context context) {
-        super(context);
-        init();
+        this(context,null);
     }
 
     public AwesomeText(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs,0);
     }
 
     public AwesomeText(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init();
+        this(context, attrs, defStyleAttr,0);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public AwesomeText(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
 
-    public void init() {
         setTypeface(AwesomeFontManager.getTypeFace(getContext(), AwesomeFontManager.FONT_AWESOME));
     }
+
 }

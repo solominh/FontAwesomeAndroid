@@ -12,27 +12,21 @@ import android.widget.Button;
 public class AwesomeButton extends Button {
 
     public AwesomeButton(Context context) {
-        super(context);
-        init();
+        this(context,null);
     }
 
     public AwesomeButton(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init();
+        this(context, attrs,0);
     }
 
     public AwesomeButton(Context context, AttributeSet attrs, int defStyle) {
-        super(context, attrs, defStyle);
-        init();
+        this(context, attrs, defStyle,0);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public AwesomeButton(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init();
+        setTypeface(AwesomeFontManager.getTypeFace(context, AwesomeFontManager.FONT_AWESOME));
     }
 
-    public void init() {
-        setTypeface(AwesomeFontManager.getTypeFace(getContext(), AwesomeFontManager.FONT_AWESOME));
-    }
 }

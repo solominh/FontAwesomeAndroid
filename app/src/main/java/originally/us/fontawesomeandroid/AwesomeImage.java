@@ -16,23 +16,22 @@ public class AwesomeImage extends ImageView {
     private int mIcon, mColor;
 
     public AwesomeImage(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public AwesomeImage(Context context, AttributeSet attrs) {
-        super(context, attrs);
-        init(context, attrs);
+        this(context, attrs, 0);
     }
 
     public AwesomeImage(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-        init(context, attrs);
+        this(context, attrs, defStyleAttr, 0);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public AwesomeImage(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        init(context, attrs);
+
+        init(context,attrs);
     }
 
     private void init(Context context, AttributeSet attrs) {
